@@ -94,7 +94,10 @@
                     <h2 class="page-title">OFFICE LOCATIONS</h2>
                     <div class="entry">
                         <p><div id="mapid"></div></p>
+
+                        <!-- Keycloak Login Start -->
                         <p><a id="loginUrl" href="#" class="btn btn-primary">Sign In to access the Location API Service</a></p>
+                        <!-- Keycloak Login End -->
                         
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam congue lectus diam, sit amet cursus massa efficitur sed. Pellentesque efficitur dolor tellus, sit amet vestibulum leo facilisis ac. Nullam vitae fringilla neque. Aliquam erat nunc, vestibulum at suscipit quis, consequat nec lorem. Phasellus porttitor mollis fermentum. Nulla eu eros libero. Donec semper, urna a rhoncus rutrum, nulla neque dignissim neque, nec congue tortor enim id mauris. Nulla euismod dolor lacus, porttitor imperdiet elit ornare nec. In finibus non justo id viverra.</p>
                     </div>
@@ -203,9 +206,10 @@
             var keycloak = Keycloak(keyOptions);
             keycloak.init({ onLoad: 'check-sso' }).success(function (authenticated) {
                 if (authenticated) {
-                    $('#mapid').show();
-                    $('#loginUrl').hide();
+                    $("<h4>Welcome " + keycloak.idTokenParsed.preferred_username + "</h4> ").insertBefore($('#mapid'));
                     callService(mymap, keycloak.token);
+                    $('#loginUrl').hide();
+                    $('#mapid').show();
                 }
                 else {
                     $('#mapid').hide();
@@ -224,10 +228,13 @@
             // Keycloak Config End
             
         });
-        function callService(map /* Keycloack Params Start*/ , token /* Keycloak Params End */){
+        function callService(map 
+            /* Keycloack Params Start*/
+             , token 
+             /* Keycloak Params End */){
             $.ajax({
-                url: "https://location-api-oidc-staging.amp.apps.2623.openshift.opentlc.com/locations",
                 // Headers Start
+                url: "https://location-api-oidc-staging.amp.apps.2623.openshift.opentlc.com/locations",
                 headers: {
                     'Authorization': 'Bearer ' + token
                 },
