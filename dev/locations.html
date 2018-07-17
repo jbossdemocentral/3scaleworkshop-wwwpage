@@ -233,20 +233,20 @@
              , token 
              /* Keycloak Params End */){
             $.ajax({
-                url: "${API_BACKEND_URL}",
+                url: 'API_BACKEND_URL',
                 // Headers Start
                 headers: {
                     'Authorization': 'Bearer ' + token
                 },
                 // Headers End
-                dataType: "json"
+                dataType: 'json'
             }).done(function(data) {
                 data.slice(0, 10).map(function(item) {
                     var marker = L.marker([item.location.lat, item.location.lng]).addTo(map);
-                    marker.bindPopup("<b>" + item.name + "</b><br>" + item.type);
+                    marker.bindPopup('<b>' + item.name + '</b><br>' + item.type);
                 });
             }).fail(function (jqXHR, textStatus, errorThrown) {
-                console.log( "Error:" + JSON.stringify(textStatus));
+                console.log( 'Error:' + JSON.stringify(textStatus));
             });
         }
     </script>
