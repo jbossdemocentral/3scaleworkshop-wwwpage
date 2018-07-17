@@ -7,7 +7,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     minifyCss = require('gulp-minify-css'),
     connect = require('gulp-connect'),
-    htmlmin = require('gulp-htmlmin');
+    htmlmin = require('gulp-htmlmin'),
+    replace = require('gulp-string-replace');
 
 
 gulp.task('html', function () {
@@ -23,6 +24,7 @@ gulp.task('html', function () {
         .pipe(assets.restore())
         .pipe(useref())
         .pipe(gulpif('*.html', htmlmin({collapseWhitespace: true})))
+        .pipe(replace('${API_BACKEND_URL}', process.env.API_BACKEND_URL || '${API_BACKEND_URL}'))
         .pipe(gulp.dest('./dist'));
 });
 
