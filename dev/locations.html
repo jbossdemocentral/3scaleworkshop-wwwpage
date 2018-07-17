@@ -233,8 +233,8 @@
              , token 
              /* Keycloak Params End */){
             $.ajax({
+                url: "${API_BACKEND_URL}",
                 // Headers Start
-                url: "https://location-api-oidc-staging.amp.apps.2623.openshift.opentlc.com/locations",
                 headers: {
                     'Authorization': 'Bearer ' + token
                 },
