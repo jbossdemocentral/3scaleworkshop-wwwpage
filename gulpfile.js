@@ -38,7 +38,7 @@ gulp.task('reload', function () {
     .pipe(connect.reload());
 });
 
-gulp.task('connect', ['env_vars'], function (done) {
+gulp.task('connect', function (done) {
   connect.server({
     host: process.env.HOSTNAME || 'localhost',
     root: 'dev',

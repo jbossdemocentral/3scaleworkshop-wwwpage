@@ -5,7 +5,7 @@
     "main": "index.html",
     "scripts": {
         "start": "gulp connect",
-        "build": "bower install",
+        "build": "bower install && gulp env_vars",
         "dev": "gulp serve"
     },
     "dependencies": {
