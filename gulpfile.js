@@ -31,7 +31,7 @@ gulp.task('env_vars', function (){
   return gulp.src('dev/*.html')
     .pipe(replace('API_BACKEND_URL', process.env.API_BACKEND_URL || 'API_BACKEND_URL'))
     .pipe(replace('SSO_URL', process.env.SSO_URL || 'SSO_URL'))
-    .pipe(replace('SSO_REALM', process.env.SSO_URL || 'SSO_REALM'))
+    .pipe(replace('SSO_REALM', process.env.SSO_REALM || 'SSO_REALM'))
     .pipe(gulp.dest('dev'));
 });
 
