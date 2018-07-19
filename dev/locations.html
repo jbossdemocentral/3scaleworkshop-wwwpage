@@ -18,7 +18,7 @@
     </style>
 
     <!-- Keycloak Adapter Start-->
-    <script src="http://sso-rh-sso.apps.2623.openshift.opentlc.com/auth/js/keycloak.js"></script>
+    <script src="SSO_URL/auth/js/keycloak.js"></script>
     <!-- Keycloak Adapter End -->
     
     <!--[if lt IE 9]>
@@ -198,8 +198,8 @@
 
             // Keycloak Config Start
             var keyOptions = {
-                url: 'http://sso-rh-sso.apps.2623.openshift.opentlc.com/auth',
-                realm: '3scale',
+                url: 'SSO_URL/auth',
+                realm: 'SSO_REALM',
                 clientId: '2d9942cd'
             };
             
