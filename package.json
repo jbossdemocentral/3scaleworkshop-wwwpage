@@ -3,10 +3,14 @@
     "version": "1.0.0",
     "description": "International Inc Web Page",
     "main": "index.html",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jbossdemocentral/3scaleworkshop-wwwpage"
+    },
     "scripts": {
         "start": "gulp connect",
-        "build": "bower install && gulp env_vars",
-        "dev": "gulp serve"
+        "build": "bower install && gulp",
+        "dev": "bower install && gulp serve"
     },
     "dependencies": {
         "bower": "^1.8.4",

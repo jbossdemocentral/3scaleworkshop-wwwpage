@@ -3,3 +3,4 @@ dev/bower_components
 .tmp
 .DS_Store
 package-lock.json
+dist/
