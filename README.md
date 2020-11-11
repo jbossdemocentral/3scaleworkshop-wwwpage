@@ -22,7 +22,7 @@ npx gulp serve
 Compiled assets are written to a *dist/* folder in the root of this repository.
 
 ```bash
-npx bower@1.8 install
+npx bower install
 npm install
 npx gulp
 ```
@@ -51,6 +51,9 @@ docker run -p 8080:8080 -v "$(pwd)/dev:/usr/src/app/dev/" intlinc-dev
 
 ## OpenShift Deployment using CLI
 
+Note that `--name` is required since the default name generated starts with a number, and this is not supported.
+
 ```
-oc new-app nodejs:10~https://github.com/jbossdemocentral/3scaleworkshop-wwwpage
+oc new-app nodejs:10~https://github.com/jbossdemocentral/3scaleworkshop-wwwpage \
+--name wwwpage
 ```
