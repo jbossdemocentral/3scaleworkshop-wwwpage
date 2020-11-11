@@ -17,7 +17,7 @@ npx bower install
 npx gulp serve
 ```
 
-## Production Build
+## Production Build (Assets only)
 
 Compiled assets are written to a *dist/* folder in the root of this repository.
 
@@ -25,6 +25,16 @@ Compiled assets are written to a *dist/* folder in the root of this repository.
 npx bower@1.8 install
 npm install
 npx gulp
+```
+
+## Production Build (Docker image)
+
+Creates an image that can be deployed. Note this uses Node.js to serve the assets. Apache/NGINX would be better, but this works for a demo.
+
+```
+NAME=intl-inc
+docker build -f Dockerfile . -t $NAME
+docker run -p 8080:8080 $NAME
 ```
 
 ## Docker Local Development Server
@@ -37,4 +47,10 @@ docker build -f Dockerfile.dev . -t intlinc-dev
 
 # Run the dev container with the dev/ directory mounted
 docker run -p 8080:8080 -v "$(pwd)/dev:/usr/src/app/dev/" intlinc-dev
+```
+
+## OpenShift Deployment using CLI
+
+```
+oc new-app nodejs:10~https://github.com/jbossdemocentral/3scaleworkshop-wwwpage
 ```
