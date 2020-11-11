@@ -1,0 +1,16 @@
+FROM node:10-alpine
+
+WORKDIR /usr/src/app
+
+COPY package*.json /usr/src/app/
+
+# Bower requires Git
+RUN apk add git
+
+RUN npm install
+
+COPY . .
+
+USER node
+EXPOSE 8080
+CMD npm run dev
