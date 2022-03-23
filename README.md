@@ -1,19 +1,9 @@
 # International Inc Web Page
 
-To test:
+To run:
 
 ```bash
-$ npm install -g bower
-$ bower install
 $ npm install
-$ gulp serve
+$ npm start
 ```
 
-To compile:
-```bash
-$ npm install
-$ npm install -g gulp
-$ gulp
-```
-
-See `gulpfile.js` for task config.
