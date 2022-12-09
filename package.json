@@ -1,26 +1,22 @@
 {
-  "name": "international-inc",
+  "name": "international-inc-web",
   "version": "1.0.0",
   "description": "International Inc Web Page",
   "main": "app.js",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.1.1",
-    "bootstrap-datepicker": "^1.9.0",
-    "express": "^4.17.3",
+    "express": "^4.18.2",
     "jquery": "^3.6.0",
     "patternfly": "^3.59.5",
     "string-replace-middleware": "^1.0.2"
   },
-  "devDependencies": {
-    "node-sass-middleware": "^1.0.1"
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jbossdemocentral/3scale-security-oidc-demo.git"
+    "url": "git+https://github.com/jbossdemocentral/3scaleworkshop-wwwpage.git"
   },
   "keywords": [
     "3scale",
@@ -38,7 +34,7 @@
   ],
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/jbossdemocentral/3scale-security-oidc-demo/issues"
+    "url": "https://github.com/jbossdemocentral/3scaleworkshop-wwwpage/issues"
   },
-  "homepage": "https://github.com/jbossdemocentral/3scale-security-oidc-demo#readme"
+  "homepage": "https://github.com/jbossdemocentral/3scaleworkshop-wwwpage#readme"
 }
