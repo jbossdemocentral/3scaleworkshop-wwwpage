@@ -13,6 +13,7 @@ const KEYCLOAK_REALM = process.env.SSO_REALM || "international";
 const KEYCLOAK_CLIENT_ID = process.env.CLIENT_ID || "www-page";
 const KEYCLOAK_ROLE = process.env.KEYCLOAK_ROLE || "none";
 const AUTHENTICATION_OPTION = process.env.AUTHENTICATION_OPTION || "none";
+const MAPS_KEY = process.env.MAPS_KEY || "missing-key-ask-instructor";
 
 const PORT = process.env.PORT || 8080;
 
@@ -23,7 +24,8 @@ app.use(stringReplace({
    'ENVIRONMENT.KEYCLOAK_REALM' : KEYCLOAK_REALM,
    'ENVIRONMENT.KEYCLOAK_CLIENT_ID': KEYCLOAK_CLIENT_ID,
    'ENVIRONMENT.KEYCLOAK_ROLE' : KEYCLOAK_ROLE,
-   'ENVIRONMENT.AUTHENTICATION_OPTION': AUTHENTICATION_OPTION
+   'ENVIRONMENT.AUTHENTICATION_OPTION': AUTHENTICATION_OPTION,
+   'ENVIRONMENT.MAPS_KEY': MAPS_KEY
 }));
 
 app.use('/css', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/css')))

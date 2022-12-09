@@ -1,23 +1,17 @@
-FROM node:10-alpine
+FROM node:16-alpine
 
-EXPOSE 8080
+# Create app directory
+WORKDIR /usr/src/app
 
-WORKDIR /home/node/app
+# Install app dependencies
+# copy files needed for the install
+COPY ["package.json", "yarn.lock", "./"]
 
-# Bower requires Git
-RUN apk add git
+# RUN yarn install
+RUN yarn install --frozen-lockfile
 
-COPY package*.json /home/node/app/
-
-RUN echo "$(pwd)"
-RUN npm install
-
+# Bundle app source
 COPY . .
 
-RUN chown -R node:node /home/node/app/dev/
-RUN chown -R node:node /home/node/app/dist/
-USER node
-
-RUN npm run build
-
-CMD npm start
+EXPOSE 8080
+CMD [ "node", "app.js" ]
